@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product — Veloura</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/product.css" />
+  </head>
+  <body data-page="shop">
+    <div id="site-header"></div>
+
+    <main id="main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="shop.html"
+            ><svg class="icon" aria-hidden="true">
+              <use href="#i-chev-left" /></svg
+            >Shop</a
+          >
+          <span aria-hidden="true">/</span>
+          <span id="crumbName" aria-current="page"></span>
+        </nav>
+
+        <div class="product">
+          <!-- Gallery: single image -->
+          <div>
+            <a class="product__media" href="#" tabindex="-1" aria-hidden="true">
+              <img id="galleryImg" src="" alt="" />
+              <span class="product__tag">
+                <span id="galleryTagStudy"></span>
+                <span id="galleryTagNo"></span>
+              </span>
+            </a>
+            <dl class="product__caption">
+              <dt>Texture study</dt>
+              <dd>
+                Clean silhouettes, soft botanicals, and a full moment to slow
+                down.
+              </dd>
+            </dl>
+          </div>
+
+          <!-- Info -->
+          <div class="product__info">
+            <p class="product__eyebrow" id="productEyebrow"></p>
+            <h1 class="product__title" id="productTitle"></h1>
+            <p class="product__subtitle" id="productSubtitle"></p>
+
+            <hr class="product__divider" />
+
+            <div class="product__price-row">
+              <span class="product__price" id="productPrice"></span>
+              <span class="product__price-note">One-time purchase</span>
+            </div>
+
+            <div class="product__buy">
+              <div class="qty-stepper">
+                <button id="qtyMinus" aria-label="Decrease quantity">−</button>
+                <span id="qtyValue">1</span>
+                <button id="qtyPlus" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn btn--dark product__add" id="addToBag">
+                Add to bag
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="#i-arrow-right" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="product__delivery">
+              Complimentary domestic delivery on orders over $75.
+            </p>
+
+            <div class="product__accordions">
+              <div class="acc" data-acc="details">
+                <button class="acc__q" aria-expanded="false">
+                  The details<span class="acc__icon" aria-hidden="true"></span>
+                </button>
+                <div class="acc__a"><p id="detailsText"></p></div>
+              </div>
+              <div class="acc" data-acc="ingredients">
+                <button class="acc__q" aria-expanded="false">
+                  Ingredient notes<span
+                    class="acc__icon"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+                <div class="acc__a">
+                  <p>
+                    TODO — real ingredient notes copy (never expanded in any
+                    reference screenshot).
+                  </p>
+                </div>
+              </div>
+              <div class="acc" data-acc="how-to-use">
+                <button class="acc__q" aria-expanded="false">
+                  How to use<span class="acc__icon" aria-hidden="true"></span>
+                </button>
+                <div class="acc__a">
+                  <p>
+                    TODO — real how-to-use copy (never expanded in any reference
+                    screenshot).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related products -->
+      <section class="related">
+        <div class="container">
+          <div class="related__head">
+            <div>
+              <p class="eyebrow">You may also like</p>
+              <h2><em>Continue the ritual.</em></h2>
+            </div>
+            <a class="link-arrow" href="shop.html"
+              >View all
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="#i-arrow-right" /></svg
+            ></a>
+          </div>
+          <div class="related__grid" id="relatedGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/components.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/product.js" defer></script>
+  </body>
+</html>

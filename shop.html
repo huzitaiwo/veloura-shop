@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop — Veloura</title>
+    <meta
+      name="description"
+      content="Considered textures for cleansing, treating, moisturising, and protecting the skin you live in."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+  </head>
+  <body data-page="shop">
+    <div id="site-header"></div>
+
+    <main id="main">
+      <!-- Shop hero -->
+      <section class="shop-hero">
+        <div class="container">
+          <p class="eyebrow eyebrow--dot">The collection</p>
+          <h1>Care for the way <em>your days unfold.</em></h1>
+          <p>
+            Considered textures for cleansing, treating, moisturising, and
+            protecting the skin you live in.
+          </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <!-- Filters + sort -->
+        <div class="shop-toolbar">
+          <div class="pills" role="group" aria-label="Filter by category">
+            <button class="pill is-active" data-filter="all">All care</button>
+            <button class="pill" data-filter="cleanse">Cleanse</button>
+            <button class="pill" data-filter="treat">Treat</button>
+            <button class="pill" data-filter="moisturise">Moisturise</button>
+            <button class="pill" data-filter="protect">Protect</button>
+            <button class="pill" data-filter="nourish">Nourish</button>
+            <button class="pill" data-filter="prepare">Prepare</button>
+          </div>
+          <label class="sort">
+            <svg class="icon" aria-hidden="true"><use href="#i-truck" /></svg>
+            <span class="visually-hidden">Sort by</span>
+            <select
+              id="sortSelect"
+              style="background: transparent; border: 0; font: inherit"
+            >
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="shop-meta">
+          <span id="shopCount">8 considered textures</span>
+          <span>All formulas are presented with full ingredient clarity.</span>
+        </div>
+
+        <!-- Product grid (rendered by shop.js) -->
+        <div class="shop-grid" id="shopGrid"></div>
+        <p class="shop-empty" id="shopEmpty">
+          No products match this filter yet.
+        </p>
+      </div>
+
+      <!-- The Veloura Cabinet -->
+      <section class="cabinet">
+        <div class="container cabinet__inner">
+          <div class="cabinet__num">
+            01<svg class="icon" aria-hidden="true">
+              <use href="#i-sparkle" />
+            </svg>
+          </div>
+          <div class="cabinet__heading">
+            <p class="eyebrow eyebrow--light">The Veloura cabinet</p>
+            <h2>Texture is a kind <em>of language.</em></h2>
+          </div>
+          <div class="cabinet__text">
+            <p>
+              Each object begins as a study in use: how it feels on the skin,
+              how it sits on a shelf, and how easily it belongs in a day.
+            </p>
+            <a class="link-arrow" href="journal.html"
+              >View all studies
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="#i-arrow-right" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature band -->
+      <section class="features">
+        <div class="features__grid">
+          <div class="features__item">
+            <span>01</span>
+            <h3>Ingredient clarity</h3>
+            <p>
+              Every product comes with the detail you need to choose carefully.
+            </p>
+          </div>
+          <div class="features__item">
+            <span>02</span>
+            <h3>Intentional layers</h3>
+            <p>Build a simple routine that feels easy to come back to.</p>
+          </div>
+          <div class="features__item">
+            <span>03</span>
+            <h3>Quietly sensorial</h3>
+            <p>
+              Refined textures that make daily care feel more like your own.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/components.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/shop.js" defer></script>
+  </body>
+</html>

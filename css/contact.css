@@ -1,0 +1,98 @@
+/* ================= Contact ================= */
+.contact {
+  padding: 4.5rem 0 6rem;
+}
+.contact__inner {
+  display: grid;
+  gap: 3rem;
+}
+@media (min-width: 900px) {
+  .contact__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.contact__intro h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.5rem, 4.4vw, 3.75rem);
+  line-height: 1;
+}
+.contact__intro > p {
+  max-width: 26rem;
+  margin-top: 1.4rem;
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.contact__details {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+.contact__details li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-sm);
+}
+.contact__details .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--color-muted);
+}
+.contact__details a {
+  color: var(--color-text);
+}
+
+/* ---- Form panel ---- */
+.contact__panel {
+  padding: 2.25rem;
+  background: var(--color-tint-light);
+}
+
+.field {
+  display: block;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.field:last-of-type {
+  border-bottom: none;
+}
+.field label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+  border-bottom: 0;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #9a9a8e;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-forest);
+}
+
+.contact__submit {
+  margin-top: 1.75rem;
+}

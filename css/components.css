@@ -1,0 +1,101 @@
+/* Product card (used on Home + Shop) */
+.pcard {
+  display: flex;
+  flex-direction: column;
+}
+
+.pcard__media {
+  position: relative;
+  display: block;
+  aspect-ratio: var(--pcard-ratio, 1 / 1);
+  overflow: hidden;
+  background: var(--color-tint);
+}
+.pcard__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.study-tag {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(29, 35, 29, 0.55);
+}
+
+.pcard__cat {
+  margin-top: 0.85rem;
+  font-size: var(--fs-2xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.pcard__name {
+  margin-top: 0.15rem;
+  font-size: var(--fs-card-title);
+  line-height: 1.1;
+}
+.pcard__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+}
+.pcard__price {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+.pcard__add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid #d5d2c8;
+  border-radius: 50%;
+  transition:
+    background-color var(--ease-fast),
+    color var(--ease-fast),
+    border-color var(--ease-fast);
+}
+.pcard__add:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: var(--color-on-dark);
+}
+.pcard__add .icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Filter pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.pill {
+  padding: 0.4rem 0.85rem;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  border: 1px solid #d8d5cb;
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--ease-fast),
+    color var(--ease-fast);
+}
+.pill:hover {
+  border-color: var(--color-forest);
+}
+.pill.is-active {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: var(--color-on-dark);
+}
