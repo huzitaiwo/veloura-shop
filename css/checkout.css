@@ -1,0 +1,106 @@
+.checkout {
+  padding: 4.5rem 0 6rem;
+}
+.checkout__inner {
+  display: grid;
+  gap: 3rem;
+}
+@media (min-width: 900px) {
+  .checkout__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+.checkout h1 {
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+/* ---- Order summary ---- */
+.checkout-summary {
+  padding: 2rem;
+  background: var(--color-tint-light);
+}
+.checkout-summary h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.co-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.co-item img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  background: var(--color-tint);
+}
+.co-item__name {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.co-item__qty {
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+}
+.co-item__price {
+  margin-left: auto;
+  font-size: var(--fs-sm);
+}
+
+.co-totals {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+}
+.co-totals__row {
+  display: flex;
+  justify-content: space-between;
+}
+.co-totals__row--total {
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--color-border);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.checkout-empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--color-tint-light);
+}
+.checkout-empty p {
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+}
+
+/* ---- Shipping form + pay button (reuses .field from contact.css) ---- */
+.checkout-form h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+.checkout-form .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+}
+
+.pay-btn {
+  width: 100%;
+  margin-top: 1.75rem;
+}
+.checkout-note {
+  margin-top: 1rem;
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+  text-align: center;
+}

@@ -124,15 +124,4 @@
       newsletterForm.reset();
     }
   });
-
-  function updateCartBadge() {
-    const cart = JSON.parse(localStorage.getItem("velouraCart") || "[]");
-    const count = cart.reduce((sum, item) => sum + item.qty, 0);
-    document.querySelectorAll("#cartCount, #cartDrawerCount").forEach((el) => {
-      el.textContent = count;
-    });
-  }
-
-  updateCartBadge();
-  window.veloura.updateCartBadge = updateCartBadge;
 })();

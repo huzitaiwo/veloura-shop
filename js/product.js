@@ -122,18 +122,7 @@
 
   /* ---- Add to bag ---- */
   document.getElementById("addToBag").addEventListener("click", () => {
-    const cart = JSON.parse(localStorage.getItem("velouraCart") || "[]");
-    const existing = cart.find((item) => item.id === product.id);
-    if (existing) existing.qty += qty;
-    else
-      cart.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        qty,
-      });
-    localStorage.setItem("velouraCart", JSON.stringify(cart));
-    window.veloura?.updateCartBadge?.();
+    window.veloura.cart.addItem(product.id, product.name, product.price, qty);
     window.veloura?.openCart?.();
   });
 
@@ -168,7 +157,7 @@
         <h3 class="pcard__name"><a href="product.html?id=${p.id}">${p.name}</a></h3>
         <div class="pcard__row">
           <span class="pcard__price">$${p.price}</span>
-          <button class="pcard__add" data-add="${p.id}" aria-label="Add ${p.name} to bag"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          <button class="pcard__add" data-add="${p.id}" data-name="${p.name}" data-price="${p.price}" aria-label="Add ${p.name} to bag"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
         </div>
       </article>`,
     )
