@@ -38,19 +38,19 @@ function renderSummary() {
     .map(
       (item) => `
     <div class="co-item">
-      <img src="assets/images/product-${item.id}.jpg" alt="${item.name}" />
+      <img src="assets/images/${item.id}.png" alt="${item.name}" />
       <div>
         <p class="co-item__name">${item.name}</p>
         <p class="co-item__qty">Qty ${item.qty}</p>
       </div>
-      <span class="co-item__price">$${(item.qty * item.price).toFixed(2)}</span>
+      <span class="co-item__price">${window.veloura.formatPrice(item.qty * item.price)}</span>
     </div>`,
     )
     .join("");
 
   const subtotal = window.veloura.cart.subtotal(cart);
-  totalsSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-  totalsTotal.textContent = `$${subtotal.toFixed(2)}`; // delivery is complimentary per the site's own copy
+  totalsSubtotal.textContent = window.veloura.formatPrice(subtotal);
+  totalsTotal.textContent = window.veloura.formatPrice(subtotal); // delivery is complimentary per the site's own copy
 }
 
 document.getElementById("checkoutForm").addEventListener("submit", (e) => {
@@ -68,13 +68,7 @@ document.getElementById("checkoutForm").addEventListener("submit", (e) => {
 
   const subtotal = window.veloura.cart.subtotal(cart);
 
-  // NOTE: Paystack charges in the smallest currency unit (kobo for NGN).
-  // The site displays prices as "$" to match the cloned design, but this
-  // Paystack account settles in NGN. Decide before going live: either
-  // (a) treat the numbers as Naira and relabel the site's price displays
-  //     from "$" to "₦", or
-  // (b) apply a real USD→NGN conversion rate here before multiplying by 100.
-  // Right now this uses the raw number as Naira, which is a placeholder.
+  // Paystack charges in kobo (1 Naira = 100 kobo).
   const amountInKobo = Math.round(subtotal * 100);
 
   payBtn.disabled = true;

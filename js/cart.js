@@ -61,10 +61,10 @@
       .map(
         (item) => `
       <div class="cart__item" data-id="${item.id}">
-        <img src="assets/images/product-${item.id}.jpg" alt="${item.name}" />
+        <img src="assets/images/${item.id}.png" alt="${item.name}" />
         <div style="flex:1">
           <p class="cart__item-name">${item.name}</p>
-          <p class="cart__item-price">$${item.price}</p>
+          <p class="cart__item-price">${window.veloura.formatPrice(item.price)}</p>
           <div class="cart__qty">
             <button type="button" data-qty-minus aria-label="Decrease quantity">−</button>
             <span>${item.qty}</span>
@@ -76,7 +76,8 @@
       )
       .join("");
 
-    if (subtotalEl) subtotalEl.textContent = `$${subtotal(cart).toFixed(2)}`;
+    if (subtotalEl)
+      subtotalEl.textContent = window.veloura.formatPrice(subtotal(cart));
   }
 
   /* ---- Event delegation: works for buttons that exist now OR render later (shop/home grids) ---- */
@@ -112,6 +113,7 @@
   });
 
   window.veloura = window.veloura || {};
+  window.veloura.formatPrice = (n) => "₦" + Number(n).toLocaleString("en-NG");
   window.veloura.cart = {
     getCart,
     addItem,

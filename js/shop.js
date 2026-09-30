@@ -5,56 +5,56 @@
       id: "verdant-cleansing-balm",
       name: "Verdant Cleansing Balm",
       category: "cleanse",
-      price: 38,
+      price: 57000,
       code: "V8",
     },
     {
       id: "amber-renewal-essence",
       name: "Amber Renewal Essence",
       category: "treat",
-      price: 52,
+      price: 78000,
       code: "AE",
     },
     {
       id: "biome-balance-wash",
       name: "Biome Balance Wash",
       category: "cleanse",
-      price: 34,
+      price: 51000,
       code: "BW",
     },
     {
       id: "cloud-veil-cream",
       name: "Cloud Veil Cream",
       category: "moisturise",
-      price: 48,
+      price: 72000,
       code: "CC",
     },
     {
       id: "dawn-barrier-serum",
       name: "Dawn Barrier Serum",
       category: "treat",
-      price: 56,
+      price: 84000,
       code: "DS",
     },
     {
       id: "mineral-cloud-spf-30",
       name: "Mineral Cloud SPF 30",
       category: "protect",
-      price: 42,
+      price: 63000,
       code: "MS",
     },
     {
       id: "night-garden-oil",
       name: "Night Garden Oil",
       category: "nourish",
-      price: 62,
+      price: 93000,
       code: "NO",
     },
     {
       id: "lumen-hydrating-toner",
       name: "Lumen Hydrating Toner",
       category: "prepare",
-      price: 32,
+      price: 48000,
       code: "LT",
     },
   ];
@@ -88,7 +88,7 @@
         <p class="pcard__cat">${CAT_LABEL[p.category]}</p>
         <h3 class="pcard__name"><a href="product.html?id=${p.id}">${p.name}</a></h3>
         <div class="pcard__row">
-          <span class="pcard__price">$${p.price}</span>
+          <span class="pcard__price">${window.veloura.formatPrice(p.price)}</span>
           <button class="pcard__add" data-add="${p.id}" data-name="${p.name}" data-price="${p.price}" aria-label="Add ${p.name} to bag">
             <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>
           </button>

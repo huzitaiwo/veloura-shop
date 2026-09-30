@@ -5,7 +5,7 @@
       id: "verdant-cleansing-balm",
       name: "Verdant Cleansing Balm",
       category: "Cleanse",
-      price: 38,
+      price: 57000,
       code: "V8",
       ritualNo: "01",
       volume: "70 ML",
@@ -15,7 +15,7 @@
       id: "amber-renewal-essence",
       name: "Amber Renewal Essence",
       category: "Treat",
-      price: 52,
+      price: 78000,
       code: "AE",
       ritualNo: "02",
       volume: "50 ML",
@@ -26,7 +26,7 @@
       id: "biome-balance-wash",
       name: "Biome Balance Wash",
       category: "Cleanse",
-      price: 34,
+      price: 51000,
       code: "BW",
       ritualNo: "03",
       volume: "150 ML",
@@ -36,7 +36,7 @@
       id: "cloud-veil-cream",
       name: "Cloud Veil Cream",
       category: "Moisturise",
-      price: 48,
+      price: 72000,
       code: "CC",
       ritualNo: "04",
       volume: "50 ML",
@@ -47,7 +47,7 @@
       id: "dawn-barrier-serum",
       name: "Dawn Barrier Serum",
       category: "Treat",
-      price: 56,
+      price: 84000,
       code: "DS",
       ritualNo: "05",
       volume: "30 ML",
@@ -57,7 +57,7 @@
       id: "mineral-cloud-spf-30",
       name: "Mineral Cloud SPF 30",
       category: "Protect",
-      price: 42,
+      price: 63000,
       code: "MS",
       ritualNo: "06",
       volume: "50 ML",
@@ -67,7 +67,7 @@
       id: "night-garden-oil",
       name: "Night Garden Oil",
       category: "Nourish",
-      price: 62,
+      price: 93000,
       code: "NO",
       ritualNo: "07",
       volume: "30 ML",
@@ -78,7 +78,7 @@
       id: "lumen-hydrating-toner",
       name: "Lumen Hydrating Toner",
       category: "Prepare",
-      price: 32,
+      price: 48000,
       code: "LT",
       ritualNo: "08",
       volume: "120 ML",
@@ -105,7 +105,8 @@
     `${product.category} · ${product.volume}`;
   document.getElementById("productTitle").textContent = product.name;
   document.getElementById("productSubtitle").textContent = product.subtitle;
-  document.getElementById("productPrice").textContent = `$${product.price}`;
+  document.getElementById("productPrice").textContent =
+    window.veloura.formatPrice(product.price);
   document.getElementById("detailsText").textContent = product.subtitle; // confirmed identical to subtitle on every product page checked
 
   /* ---- Quantity stepper ---- */
@@ -156,7 +157,7 @@
         <p class="pcard__cat">${p.category}</p>
         <h3 class="pcard__name"><a href="product.html?id=${p.id}">${p.name}</a></h3>
         <div class="pcard__row">
-          <span class="pcard__price">$${p.price}</span>
+          <span class="pcard__price">${window.veloura.formatPrice(p.price)}</span>
           <button class="pcard__add" data-add="${p.id}" data-name="${p.name}" data-price="${p.price}" aria-label="Add ${p.name} to bag"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
         </div>
       </article>`,

@@ -50,7 +50,7 @@
 <a href="#main" class="skip-link">Skip to content</a>
 <div class="announcement">
   <p>Care, distilled into a daily ritual.</p>
-  <p>Complimentary domestic delivery on orders over $75</p>
+  <p>Complimentary domestic delivery on orders over ₦100,000</p>
 </div>
 
 <header class="site-header">
